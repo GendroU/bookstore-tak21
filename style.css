@@ -1,7 +1,5 @@
-nav {
-    margin-bottom: 36px;
-}
-
-input {
-    margin: 4px;
+* {
+    padding: 0;
+    margin: 0;
+    background-color: blanchedalmond;
 }

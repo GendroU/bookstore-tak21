@@ -13,11 +13,12 @@ $stmt = $pdo->query('SELECT * FROM books WHERE is_deleted=0');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bookstore</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav style="display: flex; justify-content: space-between;">
-        <a href="add_author.php">Lisa autor</a>
+        <a href="add_author.php tfont-weight: bold;">Lisa autor</a>
 
         <form action="index.php" method="get">
             <input type="text" name="q" placeholder="Otsing">
