@@ -5,7 +5,6 @@ require_once('connection.php');
 $id = $_GET['id'];
 
 if ( isset($_POST['edit']) && $_POST['edit'] == 'Salvesta' ) {
-    // var_dump($_POST);
 
     $stmt = $pdo->prepare('UPDATE books SET title = :title, stock_saldo = :stock_saldo WHERE id = :id');
     $stmt->execute(['title' => $_POST['title'], 'stock_saldo' => $_POST['stock-saldo'], 'id' => $id]);

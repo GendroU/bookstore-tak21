@@ -11,10 +11,6 @@ if ( isset($_POST['add-author']) ) {
 
 }
 
-
-
-// kontrollida Workbenchi abil, kas kirjutati baasi
-
 ?>
 
 <!DOCTYPE html>
