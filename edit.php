@@ -4,12 +4,26 @@ require_once('connection.php');
 
 $id = $_GET['id'];
 
+/* var_dump($_POST);
+
+die(); */
+
 if ( isset($_POST['edit']) && $_POST['edit'] == 'Salvesta' ) {
 
     $stmt = $pdo->prepare('UPDATE books SET title = :title, stock_saldo = :stock_saldo WHERE id = :id');
     $stmt->execute(['title' => $_POST['title'], 'stock_saldo' => $_POST['stock-saldo'], 'id' => $id]);
 
-    header('Location: book.php?id=' . $id);
+    $pdo->prepare("DELETE FROM book_authors WHERE book_id=?")->execute([$id]);
+
+    $sql = "INSERT INTO book_authors (book_id, author_id) VALUES (:book_id, :author_id)";
+    $stmt= $pdo->prepare($sql);
+    $stmt->execute(['book_id' => $id, 'author_id' => $_POST["authors"]]);
+
+
+    
+
+
+    /* header('Location: book.php?id=' . $id); */
 }
 
 $stmtBook = $pdo->prepare('SELECT * FROM books WHERE id = :id');
